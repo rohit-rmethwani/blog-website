@@ -1,0 +1,5 @@
+#This file is used to define the URL rules and they must be in regex format.
+#RewriteEngine On
+#RewriteRule ^post$ individual_post.php
+
+#RewriteRule ^admin/posts/[a-zA-Z_]+/[0-9]+$ admin/posts.php/source=$1&post_id=$2
