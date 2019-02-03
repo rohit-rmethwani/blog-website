@@ -36,6 +36,16 @@
         }
     }
 
+    function getAllUsers($condition = 1)
+    {
+        global $connection;
+        $query = "SELECT * FROM users WHERE $condition";
+        if($result = mysqli_query($connection, $query))
+        {
+            return $result;
+        }
+    }
+
     function getAllComments($condition = 1)
     {
         global $connection;
@@ -43,6 +53,19 @@
         if($result = mysqli_query($connection, $query))
         {
             return $result;
+        }
+    }
+
+    function isLoggedIn()
+    {
+        session_start();
+        if(isset($_SESSION["user_id"]))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 ?>

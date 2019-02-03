@@ -26,18 +26,26 @@
             <span>Comments</span></a>
     </li>
 
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Users</span>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <a class="dropdown-item" href="">View All Users</a>
-            <a class="dropdown-item" href="">Add Users</a>
-        </div>
-    </li>
+    <?php
 
-
+    error_reporting(0);
+        session_start();
+        if($_SESSION["user_role"] == "Admin") {
+            ?>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Users</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                    <a class="dropdown-item" href="">View All Users</a>
+                    <a class="dropdown-item" href="">Add Users</a>
+                </div>
+            </li>
+            <?php
+        }
+    ?>
     <li class="nav-item">
         <a class="nav-link" href="">
             <i class="fas fa-fw fa-table"></i>

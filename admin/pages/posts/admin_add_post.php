@@ -9,7 +9,7 @@
 if(isset($_POST["publish_post"]))
 {
 //    die("inside if");
-    $post_author = $_POST["post_author"];
+    $post_author = $_SESSION["user_id"];
     $post_title = $_POST["post_title"];
     $post_cat_id = $_POST["post_cat_id"];
     $post_status = $_POST["post_status"];
@@ -53,11 +53,6 @@ if(isset($_POST["publish_post"]))
             <div class="form-group">
                 <label for="post_title">Post Title</label>
                 <input type="text" class="form-control" name="post_title" id="post_title">
-            </div>
-
-            <div class="form-group">
-                <label for="post_author">Post Author</label>
-                <input type="text" class="form-control" name="post_author" id="post_author">
             </div>
 
             <div class="form-group">

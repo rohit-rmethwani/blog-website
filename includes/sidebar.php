@@ -1,5 +1,39 @@
 <div class="col-md-4">
 
+    <?php
+        include_once ("functions.php");
+        if(!isLoggedIn())
+        {
+            ?>
+            <!--LOGIN-->
+    <div class="card my-4">
+        <h5 class="card-header">Search</h5>
+        <div class="card-body">
+            <form action="includes/process-login.php" method="post">
+
+                <div class="input-group">
+                    <div class="form-group">
+                        <label for="user_email">Username</label>
+                        <input type="text" class="form-control" placeholder="Enter Username" name="user_name" id="user_name">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="form-group">
+                        <label for="user_password">Password</label>
+                        <input type="password" class="form-control" placeholder="Enter Password" name="user_password" id="user_password">
+                    </div>
+                </div>
+
+                <button type="submit" name="login" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+    <!--LOGIN-->
+    <?php
+        }
+    ?>
+
     <!-- Search Widget -->
     <div class="card my-4">
         <h5 class="card-header">Search</h5>

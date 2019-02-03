@@ -21,4 +21,5 @@
         mysqli_query($connection, $query);
         check_for_query_error($connection);
     }
+
 ?>
